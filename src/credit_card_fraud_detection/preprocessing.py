@@ -9,6 +9,7 @@ class PreprocessingResult:
     X_test: pd.DataFrame
     y_train: pd.Series
     y_test: pd.Series
+    scaler: StandardScaler
     
 def validate_dataframe(df: pd.DataFrame) -> None:
     if df.empty:
@@ -51,5 +52,6 @@ def preprocess_data(df: pd.DataFrame,) -> PreprocessingResult:
         X_test=X_test_scaled,
         y_train=y_train,
         y_test=y_test,
+        scaler=scaler,
     )
    
